@@ -8,10 +8,16 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			films: []
+			films: [],
+			currentFilm: null
 		}
 	}
 
+	currentFilm = (film) => {
+		this.setState({
+			currentFilm: film
+		})
+	}
 	componentDidMount() {
 			// Call the API and set the Initial list
 			const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-CA&page=1`;
@@ -33,7 +39,8 @@ class App extends Component {
     return (
 			<div className="ug-wrapper">
 	      	<Header />
-					<MainContent films={this.state.films} />
+					<MainContent films={this.state.films} currentFilm={this.currentFilm} />
+					{console.log(this.state.currentFilm)}
 			</div>
     );
   }

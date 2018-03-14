@@ -9,6 +9,7 @@ class MainContent extends Component {
 					<Film
 						key={film.id}
 						film={film}
+						currentFilm={() => this.props.currentFilm(film)}
 						>
 					</Film>
 				)
