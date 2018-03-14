@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import Modal from './Modal';
 import MainContent from './MainContent';
 import '../assets/styles/ug-grid.css';
 import '../assets/styles/App.css';
@@ -9,7 +10,8 @@ class App extends Component {
 		super(props);
 		this.state = {
 			films: [],
-			currentFilm: null
+			currentFilm: null,
+			isOpen: false,
 		}
 	}
 
@@ -17,6 +19,12 @@ class App extends Component {
 		this.setState({
 			currentFilm: film
 		})
+		this.toggleModal();
+	}
+	toggleModal = () => {
+			this.setState({
+				isOpen: !this.state.isOpen,
+			});
 	}
 	componentDidMount() {
 			// Call the API and set the Initial list
@@ -39,8 +47,14 @@ class App extends Component {
     return (
 			<div className="ug-wrapper">
 	      	<Header />
-					<MainContent films={this.state.films} currentFilm={this.currentFilm} />
-					{console.log(this.state.currentFilm)}
+					<MainContent
+						films={this.state.films}
+						currentFilm={this.currentFilm} />
+					<Modal
+						film={this.state.currentFilm}
+						show={this.state.isOpen}
+						onClose={this.toggleModal}
+					 />
 			</div>
     );
   }
