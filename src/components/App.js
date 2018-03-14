@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../assets/styles/simple-grid.css';
 import logo from '../assets/media/logo.svg';
 import '../assets/styles/App.css';
 
