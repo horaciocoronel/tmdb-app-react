@@ -20,7 +20,11 @@ class MainContent extends Component {
   render() {
     return (
 			<div className="ug-row">
-				{this.processFilms(this.props.films)}
+				<div className="ug-col-12">
+					<div className="ug-row">
+						{this.processFilms(this.props.films)}
+					</div>
+				</div>
 			</div>
     );
   }
