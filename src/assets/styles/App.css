@@ -20,3 +20,8 @@ header h1 {
 	margin: 0;
 	margin: 0.5em;
 }
+
+.poster-image {
+	display: flex;
+	max-width: 100%;
+}
