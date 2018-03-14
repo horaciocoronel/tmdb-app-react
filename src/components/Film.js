@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Film extends Component {
-	
+
 	handleDetailsClick = (e, film) => { this.props.currentFilm() }
 
   render() {
@@ -9,13 +9,11 @@ class Film extends Component {
     return (
 
 				<div
-					className="ug-col-s-6 ug-col-m-4 ug-col-l-3 film-poster"
+					className="ug-col-s-6 ug-col-m-4 ug-col-l-3 film-poster film-poster-img"
 					key={this.props.film.id}
 					onClick={(e) => this.handleDetailsClick(e, this.props.film)}
+					style={{backgroundImage: `url(${posterPathBase+this.props.film.poster_path})`}}
 					>
-					<img
-						src={posterPathBase+this.props.film.poster_path}
-						alt={this.props.film.title} />
         </div>
     );
   }
