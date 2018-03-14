@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
+import SearchBar from './SearchBar';
 import logo from '../assets/media/tmdb-logo-green.svg';
 
 class Header extends Component {
   render() {
     return (
-        <header className="ug-row">
+			<div>
+				<header className="ug-row">
 					<div className="ug-col-expand">
-	          <img src={logo} alt="logo" />
+						<img src={logo} alt="logo" />
 						<h1 className="menu-brand">TMDB App React</h1>
 					</div>
-        </header>
+				</header>
+				<div className="ug-row search-bar">
+					<SearchBar />
+				</div>
+			</div>
     );
   }
 }
