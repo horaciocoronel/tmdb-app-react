@@ -263,6 +263,92 @@
         flex: 1;
     }
 }
+@media (max-width: 767px) {
+    .ug-col-s-1 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 8.33333%;
+        flex: 1 1 8.33333%;
+        max-width: 8.33333%;
+    }
+    .ug-col-s-2 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 16.66667%;
+        flex: 1 1 16.66667%;
+        max-width: 16.66667%;
+    }
+    .ug-col-s-3 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 25%;
+        flex: 1 1 25%;
+        max-width: 25%;
+    }
+    .ug-col-s-4 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 33.33333%;
+        flex: 1 1 33.33333%;
+        max-width: 33.33333%;
+    }
+    .ug-col-s-5 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 41.66667%;
+        flex: 1 1 41.66667%;
+        max-width: 41.66667%;
+    }
+    .ug-col-s-6 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+        flex: 1 1 50%;
+        max-width: 50%;
+    }
+    .ug-col-s-7 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 58.33333%;
+        flex: 1 1 58.33333%;
+        max-width: 58.33333%;
+    }
+    .ug-col-s-8 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 66.66667%;
+        flex: 1 1 66.66667%;
+        max-width: 66.66667%;
+    }
+    .ug-col-s-9 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 75%;
+        flex: 1 1 75%;
+        max-width: 75%;
+    }
+    .ug-col-s-10 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 83.33333%;
+        flex: 1 1 83.33333%;
+        max-width: 83.33333%;
+    }
+    .ug-col-s-11 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 91.66667%;
+        flex: 1 1 91.66667%;
+        max-width: 91.66667%;
+    }
+    .ug-col-s-12 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .ug-col-s-auto {
+        width: auto;
+        max-width: 100%;
+        -webkit-box-flex: 0;
+        -ms-flex: none;
+        flex: none;
+    }
+    .ug-col-s-expand {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+    }
+}
 
 @media (min-width: 768px) {
     .ug-col-m-1 {

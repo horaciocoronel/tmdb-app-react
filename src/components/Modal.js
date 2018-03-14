@@ -12,9 +12,8 @@ class Modal extends Component {
 			this.props.onClose();
     }
   }
-	
+
   componentDidMount(){
-		console.log(this.props.show);
     document.addEventListener("keydown", this.escFunction, false);
   }
 
@@ -31,12 +30,25 @@ class Modal extends Component {
 				onClick={this.props.onClose}
 				onKeyDown={this.props.onClose}
 				>
-					<div className="ug-row">
-						<div className="ug-col-12">
-							<div className="ug-row">
-								{console.log(this.props.film.id)}
-							</div>
-						</div>
+					<div className="ug-row film-details">
+						{/* <div className="ug-col-12" style={{width: '100%', backgroundColor: 'green'}}>
+							<div className="ug-row film-details"> */}
+
+	                <div className="ug-col-s-12 ug-col-m-10 ug-col-l-10 bottom-position">
+	                    <div className="box box-primary">
+												<h3 className="">{this.props.film.title}</h3>
+												<p>{this.props.film.overview}</p>
+											</div>
+	                </div>
+	                <div className="ug-col-s-2 ug-col-m-2 ug-col-l-2 bottom-position">
+	                    <div className="box modal-film-poster">
+												<img src={`${posterPathBase}${this.props.film.poster_path}`} alt={this.props.film.title} style={{width: '100%'}} />
+											</div>
+	                </div>
+
+
+							{/* </div>
+						</div> */}
 					</div>
 				</div>
 			</div>

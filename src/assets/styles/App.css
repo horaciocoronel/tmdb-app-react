@@ -39,6 +39,34 @@ header h1 {
 	height: 400px;
 	background-size: contain;
 	background-position: left;
+	background-repeat: no-repeat;
+}
+
+.modal-content .bottom-position {
+	bottom: 0;
+	right: 0;
+}
+
+.film-details {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	background-color: rgba(1, 10, 29, 0.84);
+	margin: 0;
+	padding: 1em 0;
+}
+
+.box-primary {
+	line-height: 1.1em;
+	font-size: 1.2em;
+	padding: 0 1.4em;
+	color: white;
+}
+
+.box-primary h3 {
+	font-size: 1.4em;
+	padding-bottom: 0;
+	margin-bottom: 0;
 }
 
 
@@ -50,6 +78,42 @@ header h1 {
 		background-size: cover;
 		background-position: left;
 	}
+ .box-primary {
+		line-height: 1.2em;
+		font-size: 0.8em;
+		padding: 0 1em 0 0;
+		color: white;
+		text-align: justify;
+	}
+ .box-primary h3 {
+		font-size: 1.4em;
+	}
+	.modal-film-poster {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.modal-content .box-primary {
+		line-height: 1.2em;
+		font-size: 1.4em;
+	}
+
+	.modal-content .box-primary h3 {
+		font-size: 1.4em;
+	}
+}
+@media only screen
+	and (min-width: 811px)
+	and (orientation: landscape) {
+	.modal-content .box-primary {
+		line-height: 1em;
+		font-size: 1em;
+	}
+
+	.modal-content .box-primary h3 {
+		font-size: 1.4em;
+	}
 }
 
 @media (min-width: 1200px) {
@@ -59,5 +123,13 @@ header h1 {
 		background-size: cover;
 		background-position: left;
 		/* background-position: center; */
+	}
+ .box-primary {
+		line-height: 1.2em;
+		font-size: 1.4em;
+	}
+
+ .box-primary h3 {
+		font-size: 1.9em;
 	}
 }
