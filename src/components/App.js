@@ -51,9 +51,9 @@ class App extends Component {
 						films={this.state.films}
 						currentFilm={this.currentFilm} />
 					<Modal
-						film={this.state.currentFilm}
 						show={this.state.isOpen}
 						onClose={this.toggleModal}
+						film={this.state.currentFilm}
 					 />
 			</div>
     );
