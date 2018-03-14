@@ -26,6 +26,22 @@ class App extends Component {
 				isOpen: !this.state.isOpen,
 			});
 	}
+
+	searchFilm = (userInput) => {
+		const film = userInput;
+		const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${film}`;
+		fetch(`${url}`)
+			.then(res => res.json())
+			.then(
+				(result) => {
+					console.log(result);
+				},
+				(error) => {
+					alert("Couldn't reach the API server")
+				}
+			)
+	}
+
 	componentDidMount() {
 			// Call the API and set the Initial list
 			const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-CA&page=1`;
@@ -55,6 +71,7 @@ class App extends Component {
 						onClose={this.toggleModal}
 						film={this.state.currentFilm}
 					 />
+					 {console.log(this.searchFilm('selena'))}
 			</div>
     );
   }
