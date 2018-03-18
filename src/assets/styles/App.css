@@ -56,15 +56,26 @@ header h1 {
 
 .autocomplete ul {
 	margin: 0;
-	background: white;
+	background: rgba(255,255,255,0.97);
 }
 .autocomplete li {
 	padding: 0.5em 0;
 	list-style: none;
 	border-bottom: 1px solid #e3e3e3;
 }
+.autocomplete li p {
+	/* padding: 0.1em 0; */
+	margin: 0.2em 0;
+	display: inline-block;
+	font-weight: 700;
+	font-size: 1.2em;
+
+}
 .autocomplete li img {
 	padding: 0 1em 0 0;
+}
+.autocomplete li:hover {
+	background: rgba(199,199,199,0.97);
 }
 
 .film-poster {

@@ -35,10 +35,12 @@ class App extends Component {
 			.then(res => res.json())
 			.then(
 				(result) => {
-					let firstFive = result.results.slice(0, 5);
-					this.setState({
-						searchResults: firstFive
-					})
+					if (result.results.length > 0) {
+						let firstFive = result.results.slice(0, 5);
+						this.setState({
+							searchResults: firstFive
+						})
+					}
 				},
 				(error) => {
 					alert("Couldn't reach the API server")
