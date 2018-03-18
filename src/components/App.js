@@ -10,6 +10,7 @@ class App extends Component {
 		super(props);
 		this.state = {
 			films: [],
+			searchResults: [],
 			currentFilm: null,
 			isOpen: false,
 		}
@@ -34,7 +35,10 @@ class App extends Component {
 			.then(res => res.json())
 			.then(
 				(result) => {
-					console.log(result);
+					let firstFive = result.results.slice(0, 5);
+					this.setState({
+						searchResults: firstFive
+					})
 				},
 				(error) => {
 					alert("Couldn't reach the API server")
@@ -62,7 +66,9 @@ class App extends Component {
   render() {
     return (
 			<div className="ug-wrapper">
-	      	<Header />
+	      	<Header
+						search={this.searchFilm}
+						searchResults={this.state.searchResults} />
 					<MainContent
 						films={this.state.films}
 						currentFilm={this.currentFilm} />
@@ -71,7 +77,6 @@ class App extends Component {
 						onClose={this.toggleModal}
 						film={this.state.currentFilm}
 					 />
-					 {console.log(this.searchFilm('selena'))}
 			</div>
     );
   }

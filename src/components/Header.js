@@ -13,7 +13,10 @@ class Header extends Component {
 					</div>
 				</header>
 				<div className="ug-row search-bar">
-					<SearchBar />
+					<SearchBar
+						search={this.props.search}
+						searchResults = {this.props.searchResults}
+					 />
 				</div>
 			</div>
     );
