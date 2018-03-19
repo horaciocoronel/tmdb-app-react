@@ -56,7 +56,7 @@
     position: relative;
 }
 
-[class*="ug-col"]:hover::after {
+/* [class*="ug-col"]:hover::after {
     position: absolute;
     top: 0;
     right: 0;
@@ -65,7 +65,7 @@
     color: #eeeeee;
     white-space: nowrap;
     content: attr(class);
-}
+} */
 
 .ug-col-1 {
     -webkit-box-flex: 1;
