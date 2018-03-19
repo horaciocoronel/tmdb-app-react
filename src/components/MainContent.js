@@ -14,6 +14,7 @@ class MainContent extends Component {
 					</Film>
 				)
 				}
+				return film;
 			})
 			return film;
 		}

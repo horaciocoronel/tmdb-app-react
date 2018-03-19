@@ -30,10 +30,8 @@ class Modal extends Component {
 				onClick={this.props.onClose}
 				onKeyDown={this.props.onClose}
 				>
+					<span className="close"  onClick={this.props.onClose}>&times;</span>
 					<div className="ug-row film-details">
-						{/* <div className="ug-col-12" style={{width: '100%', backgroundColor: 'green'}}>
-							<div className="ug-row film-details"> */}
-
 	                <div className="ug-col-s-12 ug-col-m-10 ug-col-l-10 bottom-position">
 	                    <div className="box box-primary">
 												<h3 className="">{this.props.film.title}</h3>

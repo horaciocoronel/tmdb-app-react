@@ -16,6 +16,8 @@ class Header extends Component {
 					<SearchBar
 						search={this.props.search}
 						searchResults = {this.props.searchResults}
+						resetSearchResults = {this.props.resetSearchResults}
+						currentFilm={this.props.currentFilm}
 					 />
 				</div>
 			</div>

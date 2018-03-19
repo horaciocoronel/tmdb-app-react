@@ -35,7 +35,7 @@ class App extends Component {
 			.then(res => res.json())
 			.then(
 				(result) => {
-					if (result.results.length > 0) {
+					if (result.results.length > 0 && result.results !== undefined) {
 						let firstFive = result.results.slice(0, 5);
 						this.setState({
 							searchResults: firstFive
@@ -46,6 +46,9 @@ class App extends Component {
 					alert("Couldn't reach the API server")
 				}
 			)
+	}
+	resetSearchResults = () => {
+		this.setState({ searchResults : [] })
 	}
 
 	componentDidMount() {
@@ -70,7 +73,10 @@ class App extends Component {
 			<div className="ug-wrapper">
 	      	<Header
 						search={this.searchFilm}
-						searchResults={this.state.searchResults} />
+						searchResults={this.state.searchResults}
+						resetSearchResults = {this.resetSearchResults}
+						currentFilm={this.currentFilm}
+					 />
 					<MainContent
 						films={this.state.films}
 						currentFilm={this.currentFilm} />

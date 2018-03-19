@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SearchSuggestions from './SearchSuggestions';
 
 class Film extends Component {
 
@@ -14,9 +15,13 @@ class Film extends Component {
 
  saveUserInput = () => {
 	 let searchValue = encodeURIComponent(this.search.value);
-   this.setState({ query: searchValue });
-	 console.log('saveUserInput', this.state.elapsed);
- }
+	 if (searchValue !== '') {
+	   this.setState({ query: searchValue });
+		 console.log('saveUserInput', this.state.elapsed);
+	 } else if (searchValue === '') {
+		 this.props.resetSearchResults();
+		}
+	}
 
  searchFilm = () => {
 	 if (this.state.query.length > 2 && this.state.elapsed > 50) {
@@ -41,29 +46,29 @@ class Film extends Component {
 	}
 
  searchResultsMap = () => {
-	const posterPathBase = ' http://image.tmdb.org/t/p/w300';
 		if (this.state.query !== '') {
 		if (this.props.searchResults !== undefined || this.props.searchResults.length > 0) {
-		let listItems = this.props.searchResults.map((item) => {
-			if (item.poster_path !== null) {
-			let releaseDate = new Date(item.release_date);
-				return (
-					<li key={item.id}>
-						<img src={posterPathBase+item.poster_path} style={{height: '3em'}} />
-						<p>{item.title} ({releaseDate.getFullYear()})</p></li>
-				)
-			}
-	 })
-	 return (
-		 <ul>{listItems}</ul>
-	 )
- 	}
-} else {
-	return (
-		<ul></ul>
-	)
-}
- }
+			let listItems = this.props.searchResults.map((item) => {
+				if (item.poster_path !== null) {
+					return (
+					<SearchSuggestions
+						item={item}
+						key={item.id}
+						currentFilm={() => this.props.currentFilm(item)}
+					 />
+					)
+				}
+				return listItems;
+			})
+			return (
+				<ul>{listItems}</ul>
+			)}
+		} else if (this.state.query === '') {
+			return (
+				<ul></ul>
+			)
+		}
+		 }
 
   render() {
     return (
@@ -79,8 +84,6 @@ class Film extends Component {
 					/>
 					<div className="autocomplete">
 							{this.searchResultsMap()}
-							{console.log(this.state.query)}
-						{/* {console.log(this.searchResultsMap(this.props.searchResults))} */}
 					</div>
         </div>
     );
