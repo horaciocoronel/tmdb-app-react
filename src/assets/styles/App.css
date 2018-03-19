@@ -33,6 +33,7 @@ header h1 {
 }
 
 .search-input-container input {
+	-webkit-appearance: none;
 	position: relative;
 	font-size: 1.3em;
 	color: grey;
