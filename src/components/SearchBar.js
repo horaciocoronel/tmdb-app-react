@@ -17,14 +17,14 @@ class Film extends Component {
 	 let searchValue = encodeURIComponent(this.search.value);
 	 if (searchValue !== '') {
 	   this.setState({ query: searchValue });
-		 console.log('saveUserInput', this.state.elapsed);
-	 } else if (searchValue === '') {
+		 this.searchFilm();
+	 } else if (searchValue.length < 2 || searchValue === undefined) {
 		 this.props.resetSearchResults();
 		}
 	}
 
  searchFilm = () => {
-	 if (this.state.query.length > 2 && this.state.elapsed > 50) {
+	 if (this.state.query.length > 2 && this.state.elapsed > 10) {
 		 setTimeout (() => {
 		 this.props.search(this.state.query);
 	 }, 1000);
@@ -42,7 +42,6 @@ class Film extends Component {
 	this.setState({startTime: finishTimer});
 	const elapsed = finishTimer - this.state.startTime;
 	this.setState({elapsed: elapsed});
-	this.searchFilm();
 	}
 
  searchResultsMap = () => {
