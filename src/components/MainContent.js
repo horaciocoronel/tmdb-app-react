@@ -3,9 +3,10 @@ import Film from './Film';
 class MainContent extends Component {
 
 	processFilms = (films) => {
+			let list = []
 			let film = films.map((film) => {
 				if(film.poster_path != null) {
-				return(
+				list.push(
 					<Film
 						key={film.id}
 						film={film}
@@ -14,9 +15,9 @@ class MainContent extends Component {
 					</Film>
 				)
 				}
-				return film;
+				return list;
 			})
-			return film;
+			return list;
 		}
 
   render() {
